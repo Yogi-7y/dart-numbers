@@ -5,6 +5,7 @@ void main(List<String> arguments) {
   _nativeVsWeb();
   _division();
   _test();
+  _divideByZero();
 }
 
 void _numType() {
@@ -62,4 +63,14 @@ void _test() {
   //Web result: 0.5 + 0.5 = 1
 
   // This is because it removes the trailing zeros on the web.
+}
+
+/// Infinity => [double.infinity]
+/// -Infinity => [double.negativeInfinity]
+/// NaN => [double.nan]
+void _divideByZero() {
+  print(10 / 0); // Infinity
+  // print(10 ~/ 0); // UnsupportedError: Integer division by zero.
+  print(-10 / 0); // -Infinity
+  print(0 / 0); // NaN
 }
